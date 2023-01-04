@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'master'
+      - 'create_docker_image'
     tags:
       - '*'
 
