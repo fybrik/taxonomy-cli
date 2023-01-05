@@ -27,9 +27,9 @@ docker run --rm -u "$(id -u):$(id -g)" ghcr.io/fybrik/taxonomy-cli:master help
 Or compiling a `./base.json` file with a `./layer.yaml` into a `./taxonomy.json` output:
 
 ```bash
-docker run --rm -u "$(id -u):$(id -g)" -v ${PWD}:/local \
+docker run --rm -u "$(id -u):$(id -g)" --volume ${PWD}:/local --workdir /local/ \
         ghcr.io/fybrik/taxonomy-cli:master compile \
-	-o /local/taxonomy.json \
-  	-b /local/base.json \
-        /local/layer.yaml
+	-o ./taxonomy.json \
+  	-b ./base.json \
+        ./layer.yaml
 ```
