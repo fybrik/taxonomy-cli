@@ -9,9 +9,9 @@ For more information, plaese visit [the Fybrik website](https://fybrik.io/v1.2/c
 
 ### Version compatibility matrix
 
-| Fybrik           | taxonomy-cli     | Command
-| ---              | ---              | ---
-| master           | master           | `TODO`
+| Fybrik           | taxonomy-cli |
+| ---              | ---          |
+| master           | master       |
 
 
 ## Usage

@@ -4,13 +4,11 @@ on:
   push:
     branches:
       - 'master'
-      - 'create_docker_image'
     tags:
       - '*'
 
 env:
   DOCKER_HOSTNAME: ghcr.io
-  DOCKER_NAMESPACE: ${{ github.actor }}
   DOCKER_USERNAME: ${{ github.actor }}
 
 jobs:
