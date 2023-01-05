@@ -6,8 +6,9 @@ package compile
 import (
 	"github.com/mohae/deepcopy"
 
-	taxonomyio "fybrik.io/fybrik/pkg/taxonomy/io"
-	"fybrik.io/fybrik/pkg/taxonomy/model"
+	taxonomyio "taxonomy-cli/io"
+
+	"taxonomy-cli/model"
 )
 
 // Files generates a taxonomy document from a base file and zero or more layer files

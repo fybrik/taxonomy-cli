@@ -1,10 +1,9 @@
-module taxonomy
+module taxonomy-cli
 
-go 1.18
+go 1.19
 
 require (
 	emperror.dev/errors v0.8.1
-	fybrik.io/fybrik v1.2.0
 	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826
 	github.com/mpvl/unique v0.0.0-20150818121801-cbe035fff7de
 	github.com/spf13/cobra v1.6.1
@@ -13,6 +12,7 @@ require (
 	helm.sh/helm/v3 v3.10.3
 	k8s.io/apiextensions-apiserver v0.26.0
 	k8s.io/apimachinery v0.26.0
+	sigs.k8s.io/yaml v1.3.0
 )
 
 require (
@@ -99,5 +99,4 @@ require (
 	sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.33 // indirect
 	sigs.k8s.io/json v0.0.0-20220713155537-f223a00ba0e2 // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.2.3 // indirect
-	sigs.k8s.io/yaml v1.3.0 // indirect
 )

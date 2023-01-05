@@ -10,7 +10,7 @@ import (
 	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/validation"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	taxonomyio "fybrik.io/fybrik/pkg/taxonomy/io"
+	taxonomyio "taxonomy-cli/io"
 )
 
 // IsStructuralSchema returns an error if the input file is not a valid structural schema

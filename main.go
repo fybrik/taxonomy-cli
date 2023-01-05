@@ -3,7 +3,7 @@
 
 package main
 
-import "taxonomy/cmd"
+import "taxonomy-cli/cmd"
 
 func main() {
 	cmd.Execute()
