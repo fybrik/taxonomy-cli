@@ -4,14 +4,14 @@ A taxonomy defines the terms and related values that need to be commonly underst
 
 `taxonomy-cli` can compile taxonomy files into a json shema, and validate an existant json schema.
 
-For more information, plaese visit [the Fybrik website](https://fybrik.io/v1.2/concepts/taxonomy/).
+For more information, please visit [the Fybrik website](https://fybrik.io/v1.2/concepts/taxonomy/).
 
 
 ### Version compatibility matrix
 
 | Fybrik           | taxonomy-cli |
 | ---              | ---          |
-| master           | master       |
+| master           | main         |
 
 
 ## Usage
