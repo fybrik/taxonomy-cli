@@ -6,9 +6,8 @@ package compile
 import (
 	"github.com/mohae/deepcopy"
 
-	taxonomyio "taxonomy-cli/io"
-
 	"taxonomy-cli/model"
+	"taxonomy-cli/taxonomyio"
 )
 
 // Files generates a taxonomy document from a base file and zero or more layer files

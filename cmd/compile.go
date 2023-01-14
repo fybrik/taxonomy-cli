@@ -6,8 +6,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"taxonomy-cli/compile"
-
-	taxonomyio "taxonomy-cli/io"
+	"taxonomy-cli/taxonomyio"
 )
 
 const (
