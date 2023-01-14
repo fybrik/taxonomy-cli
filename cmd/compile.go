@@ -5,8 +5,8 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 
-	"taxonomy-cli/compile"
-	"taxonomy-cli/taxonomyio"
+	"taxonomy-cli/pkg/compile"
+	"taxonomy-cli/pkg/taxonomyio"
 )
 
 const (

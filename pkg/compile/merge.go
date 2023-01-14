@@ -6,7 +6,7 @@ package compile
 import (
 	"github.com/mpvl/unique"
 
-	"taxonomy-cli/model"
+	"taxonomy-cli/pkg/model"
 	"taxonomy-cli/pkg/slices"
 )
 

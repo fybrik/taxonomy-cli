@@ -6,7 +6,7 @@ package validate
 import (
 	"context"
 
-	"taxonomy-cli/taxonomyio"
+	"taxonomy-cli/pkg/taxonomyio"
 
 	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions"
 	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/validation"

@@ -9,7 +9,7 @@ import (
 
 	"sigs.k8s.io/yaml"
 
-	"taxonomy-cli/model"
+	"taxonomy-cli/pkg/model"
 )
 
 // ReadDocumentFromFile loads a document model from a JSON or YAML file

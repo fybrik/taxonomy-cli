@@ -10,7 +10,7 @@ import (
 	"github.com/spf13/cobra"
 	"helm.sh/helm/v3/cmd/helm/require"
 
-	"taxonomy-cli/validate"
+	"taxonomy-cli/pkg/validate"
 )
 
 // define the "validate" command" to run taxonomy.ValidateSchema

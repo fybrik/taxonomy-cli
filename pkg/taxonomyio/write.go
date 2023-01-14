@@ -11,7 +11,7 @@ import (
 
 	"sigs.k8s.io/yaml"
 
-	"taxonomy-cli/model"
+	"taxonomy-cli/pkg/model"
 )
 
 // WriteDocumentToFile writes a document model to a JSON or YAML file.

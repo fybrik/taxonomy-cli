@@ -8,7 +8,7 @@ import (
 
 	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions"
 
-	"taxonomy-cli/model"
+	"taxonomy-cli/pkg/model"
 	"taxonomy-cli/pkg/slices"
 )
 
