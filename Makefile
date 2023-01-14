@@ -13,7 +13,7 @@ clean-local:
 DOCKER_HOSTNAME ?= ghcr.io
 DOCKER_NAMESPACE ?= fybrik
 DOCKER_NAME ?= taxonomy-cli
-DOCKER_TAG ?= master
+DOCKER_TAG ?= main
 DOCKER_IMG := ${DOCKER_HOSTNAME}/${DOCKER_NAMESPACE}/${DOCKER_NAME}:${DOCKER_TAG}
 
 .PHONY: build-docker
