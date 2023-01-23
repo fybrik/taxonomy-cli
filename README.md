@@ -7,13 +7,6 @@ A taxonomy defines the terms and related values that need to be commonly underst
 For more information, please visit [the Fybrik website](https://fybrik.io/v1.2/concepts/taxonomy/).
 
 
-### Version compatibility matrix
-
-| Fybrik           | taxonomy-cli |
-| ---              | ---          |
-| master           | main         |
-
-
 ## Usage
 
 Simply run the `taxonomy-cli` command on the provided docker image.
