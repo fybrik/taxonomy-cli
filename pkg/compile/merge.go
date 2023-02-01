@@ -6,8 +6,8 @@ package compile
 import (
 	"github.com/mpvl/unique"
 
-	"taxonomy-cli/pkg/model"
-	"taxonomy-cli/pkg/slices"
+	"fybrik.io/taxonomy-cli/pkg/model"
+	"fybrik.io/taxonomy-cli/pkg/slices"
 )
 
 // mergeDefinitions merges the definitions section of multiple documents.

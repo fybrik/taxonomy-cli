@@ -1,4 +1,4 @@
-module taxonomy-cli
+module fybrik.io/taxonomy-cli
 
 go 1.19
 

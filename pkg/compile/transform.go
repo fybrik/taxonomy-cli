@@ -8,8 +8,8 @@ import (
 
 	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions"
 
-	"taxonomy-cli/pkg/model"
-	"taxonomy-cli/pkg/slices"
+	"fybrik.io/taxonomy-cli/pkg/model"
+	"fybrik.io/taxonomy-cli/pkg/slices"
 )
 
 const nameKey = "name"
