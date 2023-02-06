@@ -6,6 +6,8 @@ require (
 	emperror.dev/errors v0.8.1
 	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826
 	github.com/mpvl/unique v0.0.0-20150818121801-cbe035fff7de
+	github.com/onsi/ginkgo/v2 v2.4.0
+	github.com/onsi/gomega v1.23.0
 	github.com/spf13/cobra v1.6.1
 	github.com/spf13/viper v1.14.0
 	github.com/xeipuuv/gojsonschema v1.2.0
