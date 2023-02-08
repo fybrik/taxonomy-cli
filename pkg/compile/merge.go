@@ -13,7 +13,7 @@ import (
 // mergeDefinitions merges the definitions section of multiple documents.
 // Any definition that appears only in one document is added as is.
 // Multiple definitions with the same name are merged recursively.
-func mergeDefinitions(documents ...*model.Document) (*model.Document, error) {
+func mergeDefinitions(documents ...*model.Document) *model.Document {
 	result := &model.Document{
 		Definitions: make(map[string]*model.SchemaRef),
 	}
@@ -22,7 +22,7 @@ func mergeDefinitions(documents ...*model.Document) (*model.Document, error) {
 		merge(result, doc)
 	}
 
-	return result, nil
+	return result
 }
 
 func merge(dst, src *model.Document) {
@@ -47,8 +47,6 @@ func mergeSchemaRef(dst, src *model.SchemaRef) *model.SchemaRef {
 		return dst
 	}
 
-	// maybeOverrideString(&dst.Ref, src.Ref)
-	// maybeOverrideString(&dst.Type, src.Type)
 	maybeOverrideString(&dst.Title, src.Title)
 	maybeOverrideString(&dst.Description, src.Description)
 
