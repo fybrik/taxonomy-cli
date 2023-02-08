@@ -26,7 +26,14 @@ docker-build:
 docker-push:
 	docker push $(DOCKER_IMG)
 
+.PHONY: verify
+verify:
+	go fmt ./...
+	go vet ./...
+	go fix ./...
+	go mod tidy
+
 .PHONY: test
 test: local-build
-	go test -v ./...
+	go test -v ./... -ginkgo.v -ginkgo.progress -test.v
 	rm -f ./test/testdata/output_*
