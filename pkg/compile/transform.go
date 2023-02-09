@@ -8,8 +8,8 @@ import (
 
 	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions"
 
-	"taxonomy-cli/pkg/model"
-	"taxonomy-cli/pkg/slices"
+	"fybrik.io/taxonomy-cli/pkg/model"
+	"fybrik.io/taxonomy-cli/pkg/slices"
 )
 
 const nameKey = "name"
@@ -17,7 +17,7 @@ const nameKey = "name"
 // transform applies transformations over an input document to make it structural.
 // It requires a base document and the document to transform (mutable).
 // The codegenTarget can be set to true to apply more transformations to make the document
-//  more suitable for code generation tools.
+// more suitable for code generation tools.
 func transform(base, doc *model.Document, codegenTarget bool) (*model.Document, error) {
 	t := &transformer{
 		doc:     doc,
@@ -159,7 +159,7 @@ func (t *transformer) propogateEnumFromValidationGroup(propertyName string, prop
 	}
 }
 
-func (t *transformer) removeComplexValidation(schema *model.SchemaRef) *model.SchemaRef {
+func (t *transformer) removeComplexValidation(schema *model.SchemaRef) {
 	if schema != nil {
 		schema.AllOf = nil
 		schema.OneOf = nil
@@ -174,5 +174,4 @@ func (t *transformer) removeComplexValidation(schema *model.SchemaRef) *model.Sc
 			t.removeComplexValidation(schema.AdditionalProperties.Schema)
 		}
 	}
-	return schema
 }

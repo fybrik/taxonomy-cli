@@ -6,11 +6,11 @@ package validate
 import (
 	"context"
 
-	"taxonomy-cli/pkg/taxonomyio"
-
 	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions"
 	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/validation"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+
+	"fybrik.io/taxonomy-cli/pkg/taxonomyio"
 )
 
 // IsStructuralSchema returns an error if the input file is not a valid structural schema

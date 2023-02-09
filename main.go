@@ -3,7 +3,7 @@
 
 package main
 
-import "taxonomy-cli/cmd"
+import "fybrik.io/taxonomy-cli/cmd"
 
 func main() {
 	cmd.Execute()

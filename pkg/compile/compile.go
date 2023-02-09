@@ -6,8 +6,8 @@ package compile
 import (
 	"github.com/mohae/deepcopy"
 
-	"taxonomy-cli/pkg/model"
-	"taxonomy-cli/pkg/taxonomyio"
+	"fybrik.io/taxonomy-cli/pkg/model"
+	"fybrik.io/taxonomy-cli/pkg/taxonomyio"
 )
 
 // Files generates a taxonomy document from a base file and zero or more layer files
@@ -44,10 +44,7 @@ func Documents(base *model.Document, layers []*model.Document, opts ...Option) (
 	// merge layers on top of base
 	baseCopy := deepcopy.Copy(base).(*model.Document)
 	documents := append([]*model.Document{baseCopy}, layers...)
-	merged, err := mergeDefinitions(documents...)
-	if err != nil {
-		return nil, err
-	}
+	merged := mergeDefinitions(documents...)
 	merged.Schema = base.Schema
 	merged.SchemaVersion = base.SchemaVersion
 
@@ -63,7 +60,7 @@ type compileOptions struct {
 type Option func(*compileOptions)
 
 // WithCodeGenerationTarget option to enable generating an output
-//  that is more suitable for code generation tools
+// that is more suitable for code generation tools
 func WithCodeGenerationTarget(enabled bool) Option {
 	return func(h *compileOptions) {
 		h.codegenTarget = enabled

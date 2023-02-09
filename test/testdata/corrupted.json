@@ -1,0 +1,19 @@
+{
+  "title": "taxonomy.json",
+  "definitions": {
+    "Action": {
+      "type": "object",
+      "description": "Action to be performed on the data, e.g., masking",
+      "properties": {
+        "name": {
+          "description": "Action name",
+          "$ref": "#/definitions/ActionName"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "name"
+      ]
+    }
+  }
+}

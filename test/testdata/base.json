@@ -1,0 +1,205 @@
+{
+  "title": "taxonomy.json",
+  "definitions": {
+    "Action": {
+      "type": "object",
+      "description": "Action to be performed on the data, e.g., masking",
+      "properties": {
+        "name": {
+          "description": "Action name",
+          "$ref": "#/definitions/ActionName"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "name"
+      ]
+    },
+    "ActionName": {
+      "type": "string",
+      "description": "Name of the action to be performed, or Deny if access to the data is forbidden Action names should be defined in additional taxonomy layers"
+    },
+    "AppInfo": {
+      "type": "object",
+      "description": "Application specific properties, e.g., intent for using the data, user role and workload characteristics",
+      "additionalProperties": true
+    },
+    "AssetID": {
+      "type": "string",
+      "description": "Asset ID of the registered asset to be queried in the catalog, or a name of the new asset to be created and registered by Fybrik"
+    },
+    "AttributeType": {
+      "type": "string",
+      "description": "AttributeType enumeration: numeric, string, bool",
+      "enum": [
+        "bool",
+        "numeric",
+        "string"
+      ]
+    },
+    "Capability": {
+      "type": "string",
+      "description": "Capability declared by the module, e.g., read, delete, copy, write, transform"
+    },
+    "Connection": {
+      "type": "object",
+      "description": "Name of the connection to the data source Connection details should be defined in additional taxonomy layers",
+      "properties": {
+        "name": {
+          "description": "Name of the connection to the data source",
+          "$ref": "#/definitions/ConnectionType"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "name"
+      ]
+    },
+    "ConnectionType": {
+      "type": "string",
+      "description": "Name of the connection type to the data source"
+    },
+    "DataFlow": {
+      "type": "string",
+      "description": "DataFlow indicates how the data is used by the workload, e.g., it is being read, copied, written or deleted",
+      "enum": [
+        "read",
+        "write",
+        "delete",
+        "copy"
+      ]
+    },
+    "DataFormat": {
+      "type": "string",
+      "description": "Format in which the data is being read/written by the workload"
+    },
+    "InfrastructureElement": {
+      "type": "object",
+      "description": "InfrastructureElement defines an infrastructure attribute - its measurement metric, value and relation to Fybrik resources",
+      "properties": {
+        "arguments": {
+          "type": "array",
+          "description": "A list of arguments defining a specific metric, e.g. regions for a bandwidth",
+          "items": {
+            "type": "string"
+          }
+        },
+        "attribute": {
+          "type": "string",
+          "description": "Attribute name, defined in additional taxonomy layers"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the infrastructure attribute"
+        },
+        "instance": {
+          "type": "string",
+          "description": "A reference to the resource instance, e.g. storage account name"
+        },
+        "metricName": {
+          "type": "string",
+          "description": "Name of the metric specified in the metrics section"
+        },
+        "object": {
+          "description": "A resource defined by the attribute (\"fybrikstorageaccount\",\"fybrikmodule\",\"cluster\")",
+          "$ref": "#/definitions/InstanceType"
+        },
+        "value": {
+          "type": "string",
+          "description": "Attribute value"
+        }
+      },
+      "required": [
+        "attribute",
+        "value",
+        "object"
+      ]
+    },
+    "InfrastructureMetrics": {
+      "type": "object",
+      "description": "Measurement metric defining units and the value scale used for value normalization",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "scale": {
+          "description": "A scale of values (minimum and maximum) when applicable",
+          "$ref": "#/definitions/RangeType"
+        },
+        "type": {
+          "description": "Attribute type, e.g. numeric or string",
+          "$ref": "#/definitions/AttributeType"
+        },
+        "units": {
+          "description": "Measurement units",
+          "$ref": "#/definitions/Units"
+        }
+      },
+      "required": [
+        "name",
+        "type"
+      ]
+    },
+    "InstanceType": {
+      "type": "string",
+      "description": "InstanceType enumeration: fybrikmodule, cluster, fybrikstorageaccount, inter-region",
+      "enum": [
+        "cluster",
+        "fybrikmodule",
+        "fybrikstorageaccount",
+        "inter-region"
+      ]
+    },
+    "Interface": {
+      "type": "object",
+      "description": "Connection type and data format used for data transactions",
+      "properties": {
+        "dataformat": {
+          "description": "DataFormat defines the data format type",
+          "$ref": "#/definitions/DataFormat"
+        },
+        "protocol": {
+          "description": "Connection type, e.g., S3, Kafka, MySQL",
+          "$ref": "#/definitions/ConnectionType"
+        }
+      },
+      "required": [
+        "protocol"
+      ]
+    },
+    "PluginType": {
+      "type": "string",
+      "description": "Type of the plugin, not supported yet"
+    },
+    "PolicyManagerRequestContext": {
+      "type": "object",
+      "description": "Context in which a policy is evaluated, e.g., details of the data user such as role and intent",
+      "additionalProperties": true
+    },
+    "ProcessingLocation": {
+      "type": "string",
+      "description": "location information"
+    },
+    "RangeType": {
+      "type": "object",
+      "description": "Range of numeric values",
+      "properties": {
+        "max": {
+          "type": "integer"
+        },
+        "min": {
+          "type": "integer"
+        }
+      }
+    },
+    "Tags": {
+      "type": "object",
+      "description": "Additional metadata for the asset/field",
+      "additionalProperties": true
+    },
+    "Units": {
+      "type": "string",
+      "description": "Measurement units"
+    }
+  }
+}
