@@ -57,7 +57,7 @@ func (t *transformer) transformSchema(key string, schema *model.SchemaRef) *mode
 	result = t.oneOfRefsTransform(key, result)
 
 	// Enrich enum elements based on anyOf/oneOf/allOf validation
-	result = t.propogateEnum(result)
+	result = t.propagateEnum(result)
 
 	// TODO: do we need to recurse over Properties, Items, AdditionalProperties? AllOf, OneOf, AnyOf, Not?
 
@@ -132,19 +132,19 @@ func (t *transformer) oneOfRefsTransform(key string, schema *model.SchemaRef) *m
 	return schema
 }
 
-func (t *transformer) propogateEnum(schema *model.SchemaRef) *model.SchemaRef {
+func (t *transformer) propagateEnum(schema *model.SchemaRef) *model.SchemaRef {
 	for propertyName, property := range schema.Properties {
 		property = t.doc.Deref(property)
-		t.propogateEnumFromValidationGroup(propertyName, property, schema.AllOf)
-		t.propogateEnumFromValidationGroup(propertyName, property, schema.AnyOf)
-		t.propogateEnumFromValidationGroup(propertyName, property, schema.OneOf)
+		t.propagateEnumFromValidationGroup(propertyName, property, schema.AllOf)
+		t.propagateEnumFromValidationGroup(propertyName, property, schema.AnyOf)
+		t.propagateEnumFromValidationGroup(propertyName, property, schema.OneOf)
 
 		slices.UniqueJSONSlice(&property.Enum)
 	}
 	return schema
 }
 
-func (t *transformer) propogateEnumFromValidationGroup(propertyName string, property *model.SchemaRef, validationGroup model.SchemaRefs) {
+func (t *transformer) propagateEnumFromValidationGroup(propertyName string, property *model.SchemaRef, validationGroup model.SchemaRefs) {
 	for _, validationItem := range validationGroup {
 		if validationItem.Properties != nil {
 			if validationProperty, exists := validationItem.Properties[propertyName]; exists {
@@ -153,9 +153,9 @@ func (t *transformer) propogateEnumFromValidationGroup(propertyName string, prop
 				}
 			}
 		}
-		t.propogateEnumFromValidationGroup(propertyName, property, validationItem.AllOf)
-		t.propogateEnumFromValidationGroup(propertyName, property, validationItem.AnyOf)
-		t.propogateEnumFromValidationGroup(propertyName, property, validationItem.OneOf)
+		t.propagateEnumFromValidationGroup(propertyName, property, validationItem.AllOf)
+		t.propagateEnumFromValidationGroup(propertyName, property, validationItem.AnyOf)
+		t.propagateEnumFromValidationGroup(propertyName, property, validationItem.OneOf)
 	}
 }
 
