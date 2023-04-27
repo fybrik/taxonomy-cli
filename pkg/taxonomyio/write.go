@@ -15,7 +15,7 @@ import (
 )
 
 // WriteDocumentToFile writes a document model to a JSON or YAML file.
-// The format is auto detected by the filename suffix with a fallback to JSON.
+// The format is auto-detected by the filename suffix with a fallback to JSON.
 func WriteDocumentToFile(doc *model.Document, outPath string) error {
 	var err error
 	var encoded []byte
