@@ -10,7 +10,7 @@ import (
 	"fybrik.io/taxonomy-cli/pkg/slices"
 )
 
-// mergeDefinitions merges the definitions' section of multiple documents.
+// mergeDefinitions merges the definitions section of multiple documents.
 // Any definition that appears only in one document is added as is.
 // Multiple definitions with the same name are merged recursively.
 func mergeDefinitions(documents ...*model.Document) *model.Document {
