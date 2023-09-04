@@ -21,7 +21,7 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version: ${{ env.GO_VERSION }}
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Verify
       run: |
         make verify
@@ -35,7 +35,7 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version: ${{ env.GO_VERSION }}
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Test
       run: make test
 
@@ -46,7 +46,7 @@ jobs:
     if: ${{ github.repository_owner == 'fybrik' }}
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     # Versions are created as follows:
     # - Tags starting with v will be released as what comes after `v`. (e.g. refs/tags/v1.0 -> 1.0).
     # - Main branch will be released with `main` as version tag for the docker images
